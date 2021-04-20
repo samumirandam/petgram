@@ -4,8 +4,8 @@
   "description": "**¡Sígueme en Youtube para más contenido de React y Javascript!** 👉 https://www.youtube.com/midudev",
   "main": "index.js",
   "scripts": {
-    "now-build": "npm run build",
-    "build": "webpack",
+    "vercel-build": "npm run build",
+    "build": "webpack --mode production",
     "lint": "standard",
     "lint-fix": "standard --fix",
     "start": "webpack serve --mode development",
@@ -36,6 +36,7 @@
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-icons": "^4.2.0",
     "styled-components": "^5.2.3"
   },
   "standard": {
