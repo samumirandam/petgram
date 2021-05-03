@@ -2,7 +2,14 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   output: {
-    filename: 'app.bundle.js'
+    filename: 'app.bundle.js',
+    publicPath: '/'
+  },
+  devServer: {
+    historyApiFallback: {
+      disableDotRule: true
+    },
+    liveReload: true
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -17,6 +24,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
+            plugins: ['@babel/plugin-syntax-dynamic-import'],
             presets: ['@babel/preset-env', '@babel/preset-react']
           }
         }
